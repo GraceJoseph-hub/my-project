@@ -3,11 +3,15 @@ import './Navbar.css';
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between p-3">
       {/* Brand */}
-      <a href="/" className="">Welly</a>
+      <a href="/" className="navbar__brand">
+        Welly
+      </a>
       <div className="flex">
-        <a href="/home">This is the home</a>
+        <a href="/home">
+          This is the home
+        </a>
         <a href="/search">This is the search</a>
         <a href="/about">This is the about</a>
 

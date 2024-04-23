@@ -1,4 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+/* In order to use google fonts in a react app built with tailwind css, one simple way*/
+/* is to copy the import statement of the particular font family and insert it */
+/* inside the index.css file in the src directory. */
+/* Next is to go the tailwind.config file and in the extend key, add a font-family */
+/* and copy in the font-family like this...  */
+/*
+extend: {
+  fontFamily: {
+    'anyName': ["Krona One", 'sans-serif']
+  }
+} 
+ */
+
+ /* then use it anywhere like this.. */
+
+ /*
+ className: 'font-anyName',
+ 
+ and we're good to go.
+  */
+
+  /* But for the sake of this class, we're going to use it differently by creating
+  a css file, e.g the Navbar.css, and use the traditional style by giving it a className.
+  Refer to Navbar.css for more info.
+  */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap'); */
 
 
 @tailwind base;
