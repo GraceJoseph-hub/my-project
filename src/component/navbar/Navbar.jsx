@@ -1,19 +1,24 @@
 import React from "react";
-import './Navbar.css';
+// import './Navbar.css';
+
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between p-3">
+    <nav className="flex justify-between py-3 font-krona container mx-auto">
       {/* Brand */}
-      <a href="/" className="navbar__brand">
+      <a className="text-2xl" href="/">
         Welly
       </a>
-      <div className="flex">
-        <a href="/home">
-          This is the home
+      <div className="flex items-end lowercase">
+        <a href="/home" className="mr-8 text-sm">
+          Home
         </a>
-        <a href="/search">This is the search</a>
-        <a href="/about">This is the about</a>
+        <a href="/search" className="mr-8 text-sm">
+          Search
+        </a>
+        <a href="/about" className="mr-8 text-sm">
+          About
+        </a>
 
         {/* Icons */}
         <div className="flex">
@@ -50,7 +55,7 @@ const Navbar = () => {
           </svg>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

@@ -1,17 +1,19 @@
 import React from "react";
-import Navbar from "../component/Navbar";
+import Navbar from "../component/navbar/Navbar";
+import Footer from "../component/footer/Footer";
 
 const Main = () => {
   // Navbar
   // Content
   // Footer
   return (
-    <div className="container mx-auto">
+    <>
       <Navbar />
-      <div>
+      <div className="container mx-auto">
         <p>main</p>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 
