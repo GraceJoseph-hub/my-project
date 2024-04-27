@@ -1,14 +1,12 @@
 import React from "react";
+import BrandLink from "../brandlink/BrandLink";
 // import './Navbar.css';
 
 
 const Navbar = () => {
   return (
     <nav className="flex justify-between py-3 font-krona container mx-auto">
-      {/* Brand */}
-      <a className="text-2xl" href="/">
-        Welly
-      </a>
+      <BrandLink classes=''/>
       <div className="flex items-end lowercase">
         <a href="/home" className="mr-8 text-sm">
           Home

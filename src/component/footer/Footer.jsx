@@ -1,13 +1,15 @@
 import React from "react";
 import "./Footer.css";
+import BrandLink from "../brandlink/BrandLink";
 
 const Footer = () => {
   const links = ["about", "skincare", "makeup", "supplements", "contact"];
   return (
     <footer className="flex justify-between bg-dark text-light px-4 py-4">
-      <a className="text-2xl text-yellow font-krona" href="/">
+      {/* <a className="text-2xl text-yellow font-krona" href="/">
         Welly
-      </a>
+      </a> */}
+      <BrandLink classes='text-yellow'/>
       <div className="flex items-center">
         {links.map((link) => {
           return (
