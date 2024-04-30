@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../component/navbar/Navbar";
 import Footer from "../component/footer/Footer";
 
-const Main = () => {
+const Main = ({children}) => {
   // Navbar
   // Content
   // Footer
@@ -10,7 +10,7 @@ const Main = () => {
     <>
       <Navbar />
       <div className="container mx-auto">
-        <p>main</p>
+        {children}
       </div>
       <Footer />
     </>

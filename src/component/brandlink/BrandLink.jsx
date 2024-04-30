@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const BrandLink = ({classes}) => {
   return (
-      <a className={`text-2xl font-krona ${classes}`} href="/">
+      <Link className={`text-2xl font-krona ${classes}`} to="/">
         Welly
-      </a>
+      </Link>
 
   );
 };

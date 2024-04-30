@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className="flex justify-between py-3 font-krona container mx-auto">
       <BrandLink classes=''/>
       <div className="flex items-end lowercase">
-        <a href="/home" className="mr-8 text-sm">
+        <a href="/" className="mr-8 text-sm">
           Home
         </a>
         <a href="/search" className="mr-8 text-sm">
