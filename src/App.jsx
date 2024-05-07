@@ -5,38 +5,20 @@ import Main from "./layouts/Main";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
+import Navbar from "./component/navbar/Navbar";
+import Footer from "./component/footer/Footer";
 
 function App() {
   return (
     <div>
       <Router>
+        <Navbar />
         <Routes>
-          <Route
-            path="/about"
-            element={
-              <Main>
-                <About />
-              </Main>
-            }
-          />
-          <Route
-            exact
-            path="/"
-            element={
-              <Main>
-                <Home />
-              </Main>
-            }
-          />
-          <Route
-            path="/search"
-            element={
-              <Main>
-                <Search />
-              </Main>
-            }
-          />
+          <Route path="/about" element={<About />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

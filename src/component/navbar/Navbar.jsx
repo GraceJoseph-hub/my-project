@@ -1,22 +1,23 @@
 import React from "react";
 import BrandLink from "../brandlink/BrandLink";
+import { NavLink } from "react-router-dom";
 // import './Navbar.css';
 
 
 const Navbar = () => {
   return (
     <nav className="flex justify-between py-3 font-krona container mx-auto">
-      <BrandLink classes=''/>
+      <BrandLink classes="" />
       <div className="flex items-end lowercase">
-        <a href="/" className="mr-8 text-sm">
+        <NavLink className="mr-8 text-sm" to="/">
           Home
-        </a>
-        <a href="/search" className="mr-8 text-sm">
+        </NavLink>
+        <NavLink to="/search" className="mr-8 text-sm">
           Search
-        </a>
-        <a href="/about" className="mr-8 text-sm">
+        </NavLink>
+        <NavLink to="/about" className="mr-8 text-sm">
           About
-        </a>
+        </NavLink>
 
         {/* Icons */}
         <div className="flex">
