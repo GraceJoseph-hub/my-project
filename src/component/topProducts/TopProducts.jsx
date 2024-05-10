@@ -8,6 +8,7 @@ const TopProducts = () => {
         <SectionTitle text='Top Products'/>
         <ButtonLink path='/about' text='See more' isMain/>
       </div>
+      <div className='h-80'></div>
     </div>
   )
 }

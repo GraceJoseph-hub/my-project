@@ -18,7 +18,7 @@ const MainBanner = () => {
           trulia, twitter nuvvo. Omgpop tumblr odeo mog palantir squidoo balihoo
           nuvvo, etsy yuntaa elgg reddit kiko oovoo. Kno revver oovoo, blyve.
         </p>
-        <ButtonLink path="/about" text="see more"  />
+        <ButtonLink path="/about" text="see more" isMain/>
       </div>
       <div className="ml-0 md:ml-4 mb-4 md:mb-0 py-10 md:py-0 w-2/3 md:w-full">
         <img
