@@ -1,14 +1,16 @@
 import React from 'react'
 import MainBanner from '../component/banner/MainBanner'
 import TopProducts from '../component/topProducts/TopProducts'
-import SecondaryBanner from '../component/secondaryBanner/SecondaryBanner'
+import UniqueSellingPoint from '../component/uniqueSellingPoint/UniqueSellingPoint'
+import Benefits from '../component/benefits/Benefits'
 
 const Home = () => {
   return (
     <div>
       <MainBanner />
       <TopProducts />
-      <SecondaryBanner />
+      <UniqueSellingPoint />
+      <Benefits />
     </div>
   )
 }

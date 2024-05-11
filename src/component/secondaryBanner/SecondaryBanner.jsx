@@ -1,18 +1,21 @@
 import React from 'react'
 import ButtonLink from '../buttonLink/ButtonLink';
 import banner from './banner.png'
+import './SecondaryBanner.css'
 
 const SecondaryBanner = () => {
   return (
-    <div className="container flex mx-auto bg-pink">
+    <div className=" container flex items-center justify-between mx-auto md:px-20 bg-green w-full">
       <div>
         <h3 className="font-krona md:text-5xl mb-4 md:mb-10">
-          be natural, be smart, be you.
+          Be natural, <br /> be smart, <br /> be you.
         </h3>
         <ButtonLink path="/about" text="see more" />
       </div>
-      <div className="ml-0 md:ml-4 mb-4 md:mb-0 py-10 md:py-0 w-2/3 md:w-full">
+      <div className="ml-4">
         <img
+          className="p-8"
+          width="200"
           src={banner}
           alt="Tooth brush and a paste laying on top of a green leaf"
         />

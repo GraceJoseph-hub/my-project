@@ -32,5 +32,5 @@ extend: {
 @tailwind utilities;
 
 body{
-  @apply text-dark bg-light-grey;
+  @apply text-dark;
 }
