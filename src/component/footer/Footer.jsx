@@ -1,27 +1,91 @@
 import React from "react";
-import "./Footer.css";
-import BrandLink from "../brandlink/BrandLink";
+import { Link } from "react-router-dom";
 
-const Footer = () => {
-  const links = ["about", "skincare", "makeup", "supplements", "contact"];
-  return (
-    <footer className="flex justify-between bg-dark text-light px-4 py-4">
-      {/* <a className="text-2xl text-yellow font-krona" href="/">
-        Welly
-      </a> */}
-      <BrandLink classes='text-yellow'/>
-      <div className="flex items-center">
-        {links.map((link) => {
-          return (
-            <a href="/" className="ml-4">
-              {link}
-            </a>
-          );
-        })}
-      </div>
-      {/* <p className="text-dark-grey text-xs">React JS project of Welly</p> */}
-    </footer>
-  );
-};
+import links from "../../data/footerLinks.json";
+
+import BrandLink from "../brandlink/BrandLink";
+import FacebookIcon from "../icons/FacebookIcon";
+import TwitterIcon from "../icons/TwitterIcon";
+import InstagramIcon from "../icons/InstagramIcon";
+
+import "./Footer.css";
+
+const Footer = () => (
+  <footer className="bg-dark text-light flex flex-col md:flex-row justify-between p-8">
+    <BrandLink classes="text-yellow mb-4 md:mb-0 md:pl-4 inline-block order-1" />
+
+    <div className="flex flex-col md:flex-row justify-between md:mx-auto space-x-0 md:space-x-8 space-y-8 md:space-y-0 order-3 md:order-2">
+      {links.map((item) => (
+        <div className="flex flex-col flex-wrap" key={item.title}>
+          <h6 className="font-krona text-sm">{item.title}</h6>
+          <div>
+            {item.links.map((link) => (
+              <Link
+                to={link.path}
+                key={link.name}
+                className="lowercase text-sm block hover:text-yellow"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div className="text-yellow space-x-4 md:space-x-0 order-2 md:order-3 flex md:block mb-6 md:mb-0">
+      <a
+        href="https://facebook.com"
+        target="_blank"
+        rel="noreferrer"
+        className="hover:text-light-grey block mb-4"
+      >
+        <FacebookIcon />
+      </a>
+      <a
+        href="https://twitter.com"
+        target="_blank"
+        rel="noreferrer"
+        className="hover:text-light-grey block mb-4"
+      >
+        <TwitterIcon />
+      </a>
+      <a
+        href="https://instagram.com"
+        target="_blank"
+        rel="noreferrer"
+        className="hover:text-light-grey block mb-4"
+      >
+        <InstagramIcon />
+      </a>
+
+      
+    </div>
+  </footer>
+);
 
 export default Footer;
+
+// import React from "react";
+// import "./Footer.css";
+// import BrandLink from "../brandlink/BrandLink";
+
+// const Footer = () => {
+//   const links = ["about", "skincare", "makeup", "supplements", "contact"];
+//   return (
+//     <footer className="flex justify-between bg-dark text-light px-4 py-4">
+//       <BrandLink classes='text-yellow'/>
+//       <div className="flex items-center">
+//         {links.map((link) => {
+//           return (
+//             <a href="/" key={link} className="ml-4">
+//               {link}
+//             </a>
+//           );
+//         })}
+//       </div>
+//     </footer>
+//   );
+// };
+
+// export default Footer;

@@ -14,6 +14,9 @@ export default {
         'light-grey': '#ECECEC',
         'dark-grey': '#B8B8B8',
         light: '#FAFAFA'
+      },
+      zIndex: {
+        '-1': -1,
       }
     },
   },
