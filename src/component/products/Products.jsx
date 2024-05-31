@@ -6,7 +6,7 @@ const Products = ({id, name, brand, imgUrl, price, currency }) => {
   return (
     <Link
       key={id}
-      to={`/about${id}`}
+      to={`/product/${id}`}
       className="flex flex-col rounded-md mr-6 mb-6 px-4 py-6  transform hover:scale-105 hover:shadow-xl transition delay-50 duration-300 ease-in-out"
     >
       <img
