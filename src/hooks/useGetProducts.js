@@ -9,7 +9,7 @@ const useGetProducts = () => {
   // we created an empty array to return the data we'll fetch using axios.
   // once javascript gets to this line of code, it will be empty (its initialized value).
   const [products, setProducts] = useState([]);
-  const [singleProducts, setSingleProducts] = useState(null);
+  const [singleProduct, setSingleProduct] = useState(null);
 
   const getTopProducts = () => {
     // we fetched the data and we now use setProducts(data) to change or update or manipulate
@@ -35,17 +35,17 @@ const useGetProducts = () => {
   // product that we want.
   // We are also not using the params because it's a single product that we need, so
   // (`${BASE_URL}/114.json` is the url of that product.
-  const getSingleProduct = () => {
+  const getSingleProduct = (id) => {
     axios
-      .get(`${BASE_URL}/114.json`)
-      .then((response) => setSingleProducts(response.data))
+      .get(`${BASE_URL}/${id}.json`)
+      .then(response => setSingleProduct(response.data))
   };
 
   return {
     products,
     getTopProducts,
 
-    singleProducts,
+    singleProduct,
     getSingleProduct,
   };
 };

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import "./Products.css"
 
-const Products = ({id, name, brand, imgUrl, price, currency }) => {
+const Products = ({id, name, brand, imgUrl, price }) => {
   return (
     <Link
       key={id}
@@ -17,12 +17,10 @@ const Products = ({id, name, brand, imgUrl, price, currency }) => {
       />
       <p>ID: {id}</p>
       <p className="text-yellow font-krona text-sm lowercase"> {name}</p>
-      <p className='mb-4'>{brand}</p>
-      <div className='relative'>
-        <div className='absolute bg-light-grey h-10 rounded-full top-0 w-10 -z-1'></div>
-        <p className="font-krona text-lg pt-2 ml-4">
-          {price} {currency}
-        </p>
+      <p className="mb-4">{brand}</p>
+      <div className="relative">
+        <div className="absolute bg-light-grey h-10 rounded-full top-0 w-10 -z-1"></div>
+        <p className="font-krona text-lg pt-2 ml-4">{price} &#8364;</p>
       </div>
     </Link>
   );

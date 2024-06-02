@@ -24,7 +24,6 @@ const TopProducts = () => {
               brand={product.brand}
               imgUrl={product.api_featured_image}
               price={product.price}
-              currency={product.price_sign}
             />
           ))}
         </div>
