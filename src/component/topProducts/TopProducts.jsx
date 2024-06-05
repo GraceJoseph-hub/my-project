@@ -3,7 +3,7 @@ import ButtonLink from "../buttonLink/ButtonLink";
 import SectionTitle from "../sectionTitle/SectionTitle";
 import SecondaryBanner from "../secondaryBanner/SecondaryBanner";
 import useGetProducts from "../../hooks/useGetProducts";
-import Products from "../products/Products";
+import ProductCard from "../productCard/ProductCard";
 const TopProducts = () => {
   const { products, getTopProducts } = useGetProducts();
 
@@ -17,7 +17,7 @@ const TopProducts = () => {
         </div>
         <div className="flex flex-wrap justify-center">
           {products.map((product) => (
-            <Products
+            <ProductCard
               key={product.id}
               id={product.id}
               name={product.name}

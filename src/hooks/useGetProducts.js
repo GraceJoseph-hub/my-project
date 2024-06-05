@@ -38,8 +38,32 @@ const useGetProducts = () => {
   const getSingleProduct = (id) => {
     axios
       .get(`${BASE_URL}/${id}.json`)
-      .then(response => setSingleProduct(response.data))
+      .then(response => {
+        setSingleProduct(response.data);
+        getRecommendedProducts(response.data);
+      })
   };
+
+  const getRecommendedProducts = (product) => {
+    let key;
+    let value;
+
+    if (product.product_type) {
+      key = 'product_tpe';
+      value= product.product_type
+    } else {
+      key = 'brand';
+      value= product.brand
+    }
+
+    axios
+      .get(`${BASE_URL}.json`, {
+        params: {
+          [key]: value,
+        },
+      })
+      .then((response) => setProducts(response.data));
+  }
 
   return {
     products,
