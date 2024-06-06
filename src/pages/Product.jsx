@@ -1,24 +1,18 @@
 import React from "react";
-// import { useParams } from "react-router-dom";
-import useGetProducts from "../hooks/useGetProducts";
+import useGetProduct from "../hooks/useGetProduct";
 import ProductPrice from "../component/productPrice/ProductPrice";
-// import ProductCard from "../component/productCard/ProductCard";
 import ProductTitle from "../component/productTitle/ProductTitle";
+import RecommendedProducts from "../component/recommendedProducts/RecommendedProducts";
 
 const Product = () => {
-  // const { id } = useParams();
-  // const {products, singleProduct, getSingleProduct } = useGetProducts();
-  const { singleProduct } = useGetProducts();
-
-  // useEffect(() => {
-  //   getSingleProduct(id);
-  // }, []);
-
+  const { singleProduct } = useGetProduct();
   if (!singleProduct) return <p>loading...</p>;
+
+  // console.log(singleProduct)
 
   return (
     <div className="mt-20 container mx-auto">
-      <ProductTitle />
+      <ProductTitle name={singleProduct.name} type={singleProduct.type}/>
       <div className="flex mb-10 pr-10">
         <div className="flex items-center justify-center w-screen p-10">
           <img
@@ -49,8 +43,9 @@ const Product = () => {
 
       {/* for you products */}
       {/* These are products suggested or recommended to the user  */}
+      <RecommendedProducts product={singleProduct} />
       {/* <div className="flex flex-wrap justify-center">
-        {products.map((product) => (
+        {singleProduct.map((product) => (
           <ProductCard
             key={product.id}
             id={product.id}

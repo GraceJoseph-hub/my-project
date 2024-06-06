@@ -1,13 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ButtonLink from "../buttonLink/ButtonLink";
 import SectionTitle from "../sectionTitle/SectionTitle";
 import SecondaryBanner from "../secondaryBanner/SecondaryBanner";
-import useGetProducts from "../../hooks/useGetProducts";
+import useGetTopProducts from "../../hooks/useGetTopProducts";
 import ProductCard from "../productCard/ProductCard";
-const TopProducts = () => {
-  const { products, getTopProducts } = useGetProducts();
 
-  useEffect(() => getTopProducts(), []);
+
+const TopProducts = () => {
+  const { products } = useGetTopProducts();
+
   return (
     <div>
       <div className="container mx-auto">
