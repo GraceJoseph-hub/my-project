@@ -1,6 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import { BrowserRouter as Router, Switch, Route, Routes } from "react-router-dom";
-// import Navbar from "./component/navbar/Navbar";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import About from "./pages/About";
 import Product from "./pages/Product";
 import Home from "./pages/Home";
@@ -8,6 +6,7 @@ import Search from "./pages/Search";
 import Navbar from "./component/navbar/Navbar";
 import Footer from "./component/footer/Footer";
 
+  
 function App() {
   return (
     <div>

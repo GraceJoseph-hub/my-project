@@ -65,27 +65,3 @@ const Footer = () => (
 );
 
 export default Footer;
-
-// import React from "react";
-// import "./Footer.css";
-// import BrandLink from "../brandlink/BrandLink";
-
-// const Footer = () => {
-//   const links = ["about", "skincare", "makeup", "supplements", "contact"];
-//   return (
-//     <footer className="flex justify-between bg-dark text-light px-4 py-4">
-//       <BrandLink classes='text-yellow'/>
-//       <div className="flex items-center">
-//         {links.map((link) => {
-//           return (
-//             <a href="/" key={link} className="ml-4">
-//               {link}
-//             </a>
-//           );
-//         })}
-//       </div>
-//     </footer>
-//   );
-// };
-
-// export default Footer;

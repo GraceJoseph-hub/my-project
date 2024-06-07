@@ -1,15 +1,16 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const BASE_URL = "http://makeup-api.herokuapp.com/api/v1/products.json";
 
+const PRODUCT_COUNT = 4
+
 const useGetRecommendedProducts = (product) => {
   const [products, setProducts] = useState([]);
-  
-  const key = product.product_type ? "product_tpe" : "brand";
-  const value = product.product_type ? product_type : product.brand;
 
-  const getRecommendedProducts = () => {
+  const getRecommendedProducts = useCallback(() => {
+    const key = product.product_type ? "product_tpe" : "brand";
+    const value = product.product_type ? "product_type" : "brand";
     axios
       .get(BASE_URL, {
         params: {
@@ -17,16 +18,17 @@ const useGetRecommendedProducts = (product) => {
         },
       })
       .then((response) => {
-        const fetchedProducts = response.data;
-        fetchedProducts.length = fetchedProducts.length > 4 ? 4 : fetchedProducts.length
-        setProducts(response.data)
+        const {data} = response;
+        data.length =
+          data.length > PRODUCT_COUNT ? PRODUCT_COUNT : data.length;
+        setProducts(data);
       });
-  };
+  }, [product]);
 
   useEffect(() => {
     if (!product) return;
     getRecommendedProducts();
-  }, []);
+  }, [product, getRecommendedProducts]);
 
   // If I want to check the data got from the api, I could log it in the console.
   // .then((response) => console.log(response.data)

@@ -4,6 +4,38 @@ import { useEffect, useState } from "react";
 
 const BASE_URL = "http://makeup-api.herokuapp.com/api/v1/products";
 
+const PRODUCT_TAGS = [
+  'canadian',
+  'certclean',
+  'chemical free',
+  'diary free',
+  'ewg verified',
+  'ecocert',
+  'fair trade',
+  'gluten free',
+  'hypoallergenic',
+  'natural',
+  'no talc',
+  'non-gmo',
+  'organic',
+  'peanut free product',
+  'sugar free',
+  'usda organic',
+  'vegan free',
+  'alcohol free',
+  'cruelty free',
+  'oil free',
+  'purpicks',
+  'silicon free',
+  'water free'
+]
+
+const PRODUCTS_COUNT = 8
+const getRandomProductTag = () => {
+  const randomNumber = Math.floor(Math.random() * PRODUCT_TAGS.length);
+
+  return PRODUCT_TAGS[randomNumber]
+}
 
 const useGetTopProducts = () => {
   // we created an empty array to return the data we'll fetch using axios.
@@ -21,10 +53,14 @@ const useGetTopProducts = () => {
     axios
       .get(`${BASE_URL}.json`, {
         params: {
-          product_tags: "ecocert",
+          product_tags: getRandomProductTag(),
         },
       })
-      .then((response) => setProducts(response.data));
+      .then((response) => {
+        const {data} = response
+        data.length = data.length > PRODUCTS_COUNT ? PRODUCTS_COUNT : data.length;
+        setProducts(data)
+      })
   };
 
   // At this point, we do not have anything to call our getData(), so we'll use the

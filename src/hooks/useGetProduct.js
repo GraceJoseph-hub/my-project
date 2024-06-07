@@ -16,18 +16,15 @@ const useGetProduct = () => {
     axios
       .get(`${BASE_URL}/${id}.json`)
       .then((response) => setSingleProduct(response.data));
-  });
+  }, [id]);
 
   useEffect(() => {
     // Here, we're saying that if there's no singleProduct, it should return getSingleProduct()
-    if (!singleProduct) {
-      getSingleProduct();
-    }
-  }, [singleProduct, getSingleProduct]);
+    getSingleProduct();
+  }, [id, getSingleProduct]);
 
    return {
      singleProduct,
-     getSingleProduct,
    };
 
   // So in the below, we got the base url and added the id (114) to fetch the particular

@@ -1,18 +1,28 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
+import { useLocation } from "react-router-dom";
 import useGetProduct from "../hooks/useGetProduct";
 import ProductPrice from "../component/productPrice/ProductPrice";
 import ProductTitle from "../component/productTitle/ProductTitle";
+import Benefits from "../component/benefits/Benefits";
 import RecommendedProducts from "../component/recommendedProducts/RecommendedProducts";
+
+
 
 const Product = () => {
   const { singleProduct } = useGetProduct();
-  if (!singleProduct) return <p>loading...</p>;
+  
+  // This will enable the screen to scroll back to the top on url change (whenever a user)
+  // clicks on any recommended product, it will scroll to the top.
+  const location = useLocation()
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
 
-  // console.log(singleProduct)
+  if (!singleProduct) return <p>loading...</p>;
 
   return (
     <div className="mt-20 container mx-auto">
-      <ProductTitle name={singleProduct.name} type={singleProduct.type}/>
+      <ProductTitle name={singleProduct.name} type={singleProduct.type} />
       <div className="flex mb-10 pr-10">
         <div className="flex items-center justify-center w-screen p-10">
           <img
@@ -26,11 +36,8 @@ const Product = () => {
           </p>
           <h1 className="font-krona text-base">{singleProduct.name}</h1>
           <p>{singleProduct.category}</p>
-
-          {/* price */}
           <div className="flex justify-between my-10 ">
             <ProductPrice price={singleProduct.price} isLarge />
-            {/* <div>counter</div> */}
             <button className="inline-block rounded-full font-bold font-krona text-xs bg-yellow px-4 py-2">
               add to basket
             </button>
@@ -43,19 +50,9 @@ const Product = () => {
 
       {/* for you products */}
       {/* These are products suggested or recommended to the user  */}
+
+      <Benefits />
       <RecommendedProducts product={singleProduct} />
-      {/* <div className="flex flex-wrap justify-center">
-        {singleProduct.map((product) => (
-          <ProductCard
-            key={product.id}
-            id={product.id}
-            name={product.name}
-            brand={product.brand}
-            imgUrl={product.api_featured_image}
-            price={product.price}
-          />
-        ))}
-      </div> */}
     </div>
   );
 };
