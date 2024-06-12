@@ -5,9 +5,9 @@ import './SecondaryBanner.css'
 
 const SecondaryBanner = () => {
   return (
-    <div className=" container flex items-center justify-between mx-auto md:px-20 bg-green w-full">
+    <div className="relative -mb-24 container flex items-center justify-between mx-auto md:px-20 bg-green w-full">
       <div>
-        <h3 className="font-krona md:text-5xl mb-4 md:mb-10">
+        <h3 className="font-krona  mb-4 md:mb-10">
           Be natural, <br /> be smart, <br /> be you.
         </h3>
         <ButtonLink path="/about" text="see more" />
