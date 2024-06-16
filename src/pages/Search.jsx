@@ -7,8 +7,8 @@ const Search = () => {
       <div className="sidebar">
         <SideBar />
       </div>
-      <div className="topbar">topbar</div>
-      <div className="result">result</div>
+      <div className="searchbar">topbar</div>
+      <div className="results">result</div>
     </div>
   )
 }
