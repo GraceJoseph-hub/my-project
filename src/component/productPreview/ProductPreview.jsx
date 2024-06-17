@@ -2,26 +2,23 @@ import React from 'react'
 import ProductPrice from '../productPrice/ProductPrice';
 import propTypes from 'prop-types'
 import CartButton from '../cartButton/CartButton';
+import Image from '../image/Image';
+import Info from '../info/Info';
+import Description from '../description/Description';
 
 const ProductPreview = ({ name, img, type, category, price, description }) => {
-  const imgUrl = `https://${img}`
-  const formatType = type.replace(/_/g, '')
-  const formatDescription = description.replace(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+  
   return (
     <div>
       <div className="flex flex-col md:flex-row mb-20 pr-10">
-        <div className="flex items-center justify-center p-10">
-          <img src={imgUrl} alt={name} />
-        </div>
+        <Image name={name} img={img}/>
         <div>
-          <p className="text-yellow text-sm font-krona">{formatType}</p>
-          <h1 className="font-krona text-base">{name}</h1>
-          <p>{category}</p>
+          <Info name={name} type={type} category={category}/>
           <div className="flex justify-between my-10 ">
             <ProductPrice price={price} isLarge />
             <CartButton />
           </div>
-          <p>{formatDescription}</p>
+         <Description text={description}/>
         </div>
       </div>
     </div>
@@ -38,7 +35,3 @@ ProductPreview.propTypes = {
   price: propTypes.string.isRequired,
   description: propTypes.string.isRequired,
 }
-
-// ProductPreview.defaultProps = {
-//   name: "blaaaaa"
-// }
