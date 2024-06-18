@@ -2,11 +2,9 @@ import React, { useLayoutEffect } from "react";
 import { useLocation } from "react-router-dom";
 import useGetProduct from "../hooks/useGetProduct";
 import Loader from "../component/loader/Loader";
-// import ProductPrice from "../component/productPrice/ProductPrice";
-import ProductTitle from "../component/productTitle/ProductTitle";
 import Benefits from "../component/benefits/Benefits";
 import RecommendedProducts from "../component/recommendedProducts/RecommendedProducts";
-import ProductPreview from "../component/productPreview/ProductPreview";
+import ProductPreview from "../component/product/ProductPreview";
 
 const Product = () => {
   const { singleProduct, isLoading } = useGetProduct();
@@ -25,8 +23,6 @@ const Product = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <>
-          <ProductTitle name={singleProduct.name} type={singleProduct.type} />
           <ProductPreview
             name={singleProduct.name}
             img={singleProduct.api_featured_image}
@@ -35,11 +31,9 @@ const Product = () => {
             price={singleProduct.price}
             description={singleProduct.description}
           />
-
-          <Benefits />
-          <RecommendedProducts product={singleProduct} />
-        </>
       )}
+      <Benefits />
+      <RecommendedProducts product={singleProduct} />
     </div>
   );
 };

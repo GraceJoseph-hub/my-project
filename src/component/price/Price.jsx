@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProductPrice = ({price, isLarge}) => {
+const Price = ({price, isLarge}) => {
   return (
     <div className="relative">
       <div className="absolute bg-light-grey h-10 rounded-full top-0 w-10 -z-1"></div>
@@ -9,4 +9,4 @@ const ProductPrice = ({price, isLarge}) => {
   );
 }
 
-export default ProductPrice
+export default Price
