@@ -3,9 +3,9 @@ import ButtonLink from '../buttonLink/ButtonLink';
 import banner from './banner.png'
 import './SecondaryBanner.css'
 
-const SecondaryBanner = () => {
+const SecondaryBanner = ({isRelative}) => {
   return (
-    <div className="relative -mb-24 container flex items-center justify-between mx-auto md:px-20 bg-green w-full">
+    <div className={`${isRelative ? "relative" : ""} relative -mb-24 container flex items-center justify-between mx-auto md:px-20 bg-green w-full`}>
       <div>
         <h3 className="font-krona  mb-4 md:mb-10">
           Be natural, <br /> be smart, <br /> be you.

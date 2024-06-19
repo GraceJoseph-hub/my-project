@@ -10,7 +10,7 @@ const useGetRecommendedProducts = (product) => {
 
   const getRecommendedProducts = useCallback(() => {
     const key = product.product_type ? "product_tpe" : "brand";
-    const value = product.product_type ? "product_type" : "brand";
+    const value = product.product_type ? product.product_type : product.brand;
     axios
       .get(BASE_URL, {
         params: {
