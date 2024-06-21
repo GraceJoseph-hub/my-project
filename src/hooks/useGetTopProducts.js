@@ -1,34 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { PRODUCT_TAGS } from "../component/constants/tags";
 
 
 const BASE_URL = "http://makeup-api.herokuapp.com/api/v1/products";
-
-const PRODUCT_TAGS = [
-  'canadian',
-  'certclean',
-  'chemical free',
-  'diary free',
-  'ewg verified',
-  'ecocert',
-  'fair trade',
-  'gluten free',
-  'hypoallergenic',
-  'natural',
-  'no talc',
-  'non-gmo',
-  'organic',
-  'peanut free product',
-  'sugar free',
-  'usda organic',
-  'vegan free',
-  'alcohol free',
-  'cruelty free',
-  'oil free',
-  'purpicks',
-  'silicon free',
-  'water free'
-]
 
 const PRODUCTS_COUNT = 8
 const getRandomProductTag = () => {
