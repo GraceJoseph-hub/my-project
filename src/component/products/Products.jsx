@@ -1,8 +1,10 @@
 import React from 'react'
 import Loader from '../loader/Loader';
 import ProductCard from '../productCard/ProductCard';
+import { useSearchState } from '../../states/search-context';
 
-const Products = ({ products }) => {
+const Products = () => {
+  const [{ products }] = useSearchState()
   // console.log(products)
   return (
     <div>
