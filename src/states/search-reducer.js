@@ -1,13 +1,16 @@
 import { SET_FILTER, SET_PRODUCTS } from "./actionTypes";
 
 
-export const searchReducer = (state, action) => {
-  switch (action.type) {
+export const searchReducer = (state, { type, payload }) => {
+  switch (type) {
     case SET_PRODUCTS:
-      return { ...state, products: action.payload };
+      return { ...state, products: payload };
     case SET_FILTER:
-      return { ...state, filters: {...state.filters, [payload.type]: payload.value} };
+      return {
+        ...state,
+        filters: { ...state.filters, [payload.name]: payload.value },
+      };
     default:
-      return state
+      return state;
   }
-}
+};

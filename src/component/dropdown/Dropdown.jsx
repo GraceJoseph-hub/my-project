@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Dropdown = ({type, values, onChange}) => {
+const Dropdown = ({ type, values, onChange }) => {
   return (
     <div className="flex flex-col p-2">
       <label htmlFor={type} className="font-bold mb-2 font-krona text-sm">
@@ -18,6 +18,6 @@ const Dropdown = ({type, values, onChange}) => {
       </select>
     </div>
   );
-}
+};
 
 export default Dropdown

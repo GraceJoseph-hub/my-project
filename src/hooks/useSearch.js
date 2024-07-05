@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useSearchState } from "../states/search-context";
-import { setFilterState, setProducts } from "../states/actionCreators";
+import { setProducts } from "../states/actionCreators";
 
 const BASE_URL = "https://makeup-api.herokuapp.com/api/v1/products";
 
@@ -10,13 +10,15 @@ const BASE_URL = "https://makeup-api.herokuapp.com/api/v1/products";
 const useSearch = () => {
   const [state, dispatch] = useSearchState()
   
-  const getProducts = (params) => {
+  const getProducts = () => {
     // This will clear the products and set it back to default once a new call is made.
    dispatch(setProducts([]));
 
     const params = {
       product_type: state.filters.productType,
       brand: state.filters.brand,
+      price_greater_than: state.filters.minPrice,
+      price_less_than: state.filters.maxPrice,
     };
 
     axios
@@ -28,21 +30,21 @@ const useSearch = () => {
       });
   };
 
-  const setFilter = (type, value) => {
-    setFilterState({type, value})
-    getProducts(params)
-  }
+  // const setFilter = (type, value) => {
+  //   setFilterState({type, value})
+  //   getProducts(params)
+  // }
+  // useEffect(() => {
+  //   getProducts();
+  // }, []);
+
   useEffect(() => {
     getProducts();
-  }, []);
-
-  useEffect(() => {
-    getProducts(state.filters);
   }, [state.filters]);
 
-  return {
-    setFilter,
-  };
+  // return {
+  //   setFilter,
+  // };
 };
 
 export default useSearch;
