@@ -1,7 +1,7 @@
 import React from "react";
 
 const PriceRange = ({ onChange }) => {
-//   let currentTimeout;
+  let currentTimeout;
 
   const onChangeHandler = (e) => {
     clearTimeout(currentTimeout);

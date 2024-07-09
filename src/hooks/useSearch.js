@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSearchState } from "../states/search-context";
 import { setProducts } from "../states/actionCreators";
 
@@ -9,8 +9,10 @@ const BASE_URL = "https://makeup-api.herokuapp.com/api/v1/products";
 
 const useSearch = () => {
   const [state, dispatch] = useSearchState()
+  const [isLoading, setIsLoading] = useState(true)
   
   const getProducts = () => {
+    setIsLoading(true)
     // This will clear the products and set it back to default once a new call is made.
    dispatch(setProducts([]));
 
@@ -27,24 +29,17 @@ const useSearch = () => {
       })
       .then(({ data }) => {
         dispatch(setProducts(data));
+        setIsLoading(false)
       });
   };
-
-  // const setFilter = (type, value) => {
-  //   setFilterState({type, value})
-  //   getProducts(params)
-  // }
-  // useEffect(() => {
-  //   getProducts();
-  // }, []);
 
   useEffect(() => {
     getProducts();
   }, [state.filters]);
 
-  // return {
-  //   setFilter,
-  // };
+  return {
+    isLoading,
+  };
 };
 
 export default useSearch;

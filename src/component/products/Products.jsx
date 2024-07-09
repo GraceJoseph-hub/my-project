@@ -1,7 +1,6 @@
-import React from 'react'
-// import Loader from '../loader/Loader';
-import ProductCard from '../productCard/ProductCard';
-import { useSearchState } from '../../states/search-context';
+import React from "react";
+import ProductCard from "../productCard/ProductCard";
+import { useSearchState } from "../../states/search-context";
 
 const Products = () => {
   const [{ products }] = useSearchState();
@@ -10,7 +9,6 @@ const Products = () => {
     <div className="flex flex-wrap justify-center">
       {products.length === 0 ? (
         <div className="text-center mt-8">
-          {/* <Loader /> */}
           <h4 className="font-krona">Sorry, no products</h4>
           <p>Please try changing your filters</p>
         </div>
@@ -32,5 +30,4 @@ const Products = () => {
   );
 };
 
-
-export default Products
+export default Products;
