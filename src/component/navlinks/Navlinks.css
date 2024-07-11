@@ -1,41 +1,3 @@
-/* @media(max-width:800px){
-  .navlinks{
-    display: none;
-  }
-  .menu{
-    display: block;
-  }
-}
-
-@media(min-width:801px){
-  .navlinks{
-    display: flex;
-  }
-  .menu{
-    display: none;
-  }
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 15%;
-  background-color: rgba(0, 0, 0, 0.359);
-  display: none; 
-  justify-content: center;
-  align-items: center;
-  z-index: 50;
-}
-
-.overlay.open {
-  display: flex; 
-}
- */
-
-
-
 
  @media (max-width: 800px) {
   .navlinks {
@@ -78,4 +40,8 @@
   right: 10px;
   z-index: 51; 
   cursor: pointer;
+}
+
+@media(min-width:500px){
+
 }

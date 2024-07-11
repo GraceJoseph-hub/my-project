@@ -2,6 +2,7 @@ import React from 'react'
 import PriceRange from '../priceRange/PriceRange'
 import CategoriesBar from '../categoriesBar/CategoriesBar'
 import Dropdown from '../dropdown/Dropdown'
+import './SideBar.css'
 import { BRANDS } from '../constants/brands'
 import { setFilter } from '../../states/actionCreators'
 import { useSearchState } from '../../states/search-context'
@@ -19,7 +20,7 @@ const SideBar = () => {
     dispatch(setFilter('productType', value))
   }
   return (
-    <div className="pl-6">
+    <div className="sidebar pl-6">
       <PriceRange onChange={handleOnchange} />
       <Dropdown
         type="brand"

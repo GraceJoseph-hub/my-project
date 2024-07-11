@@ -118,7 +118,7 @@ const Navlinks = () => {
         ))}
       </div>
       <div onClick={toggleBtn} className="menu-button">
-        {isOpen ? <FaSquareXmark /> : <FaBars />}
+        {isOpen ? <FaSquareXmark /> : <FaBars className="menu"/>}
       </div>
       <div className={`overlay ${isOpen ? "open" : "hide"}`}>
         <div className="flex flex-col items-center">

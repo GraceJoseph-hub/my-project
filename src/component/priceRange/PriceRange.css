@@ -1,0 +1,15 @@
+@media(max-width: 454px){
+  .pricerangeInput{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .labels{
+    display: none;
+  }
+
+  .hrule{
+    display: none;
+  }
+}

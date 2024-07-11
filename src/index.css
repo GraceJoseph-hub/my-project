@@ -44,6 +44,12 @@ body{
   "sidebar results";
 }
 
+@media(max-width: 454px){
+  .search{
+    grid-template-columns: 145px auto;
+  }
+}
+
 .search .sidebar{
   grid-area: sidebar;
 }
