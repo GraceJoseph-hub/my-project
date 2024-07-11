@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import './Navlinks.css'
+import "./Navlinks.css";
 import { NavLink, useLocation } from "react-router-dom";
 import { FaBars, FaSquareXmark } from "react-icons/fa6";
-
 
 const Navlinks = () => {
   const location = useLocation();
@@ -27,11 +26,11 @@ const Navlinks = () => {
       name: "About",
     },
   ];
+
   return (
     <>
       <div className="navlinks">
         {links.map((link, index) => (
-          // <Link>
           <NavLink
             to={link.path}
             key={`${link.name}-${index}`}
@@ -43,12 +42,27 @@ const Navlinks = () => {
           >
             {link.name}
           </NavLink>
-          // {/* <span className="absolute bottom-0 left-0 h-[0.125em] w-0 rounded-full bg-red duration-200 ease-in-out group-hover:w-full"></span> */}
-          // </Link>
         ))}
       </div>
       <div onClick={toggleBtn} className="menu cursor-pointer">
         {isOpen ? <FaSquareXmark /> : <FaBars />}
+      </div>
+      <div className={`overlay ${isOpen ? "open" : "hide"}`}>
+        <div className="menu-links">
+          {links.map((link, index) => (
+            <NavLink
+              to={link.path}
+              key={`${link.name}-${index}`}
+              className={`text-base hover:text-red ${
+                activeRoute === link.path
+                  ? "text-yellow"
+                  : "text-black dark:text-white"
+              }`}
+            >
+              {link.name}
+            </NavLink>
+          ))}
+        </div>
       </div>
     </>
   );

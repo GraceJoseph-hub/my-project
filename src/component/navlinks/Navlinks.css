@@ -1,21 +1,51 @@
 @media(max-width:800px){
-    .navlinks{
+  .navlinks{
     display: none;
   }
-
-   .menu{
+  .menu{
     display: block;
   }
 }
 
 @media(min-width:801px){
-    .navlinks{
+  .navlinks{
     display: flex;
   }
-
   .menu{
     display: none;
   }
 }
 
+.overlay {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background-color: rgba(0, 0, 0, 0.359);
+  display: none; 
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
 
+.overlay.open {
+  display: flex; /* Show when open */
+}
+
+.menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-links a {
+  margin: 10px 0;
+}

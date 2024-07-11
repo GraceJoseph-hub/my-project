@@ -40,7 +40,7 @@ const TopProducts = () => {
           )}
         </div>
       </div>
-      <SecondaryBanner isRelative/>
+      <SecondaryBanner isRelative className="mt-10"/>
     </div>
   );
 };
