@@ -13,10 +13,10 @@ const Navbar = () => {
       <BrandLink classes="" />
       <div className="navIcon flex items-end">
         <Navlinks />
-        <div className="flex">
+        {/* <div className="flex">
           <HeartIcon />
           <CartIcon />
-        </div>
+        </div> */}
       </div>
     </nav>
   );
