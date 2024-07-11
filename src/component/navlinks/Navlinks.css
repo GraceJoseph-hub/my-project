@@ -1,0 +1,21 @@
+@media(max-width:800px){
+    .navlinks{
+    display: none;
+  }
+
+   .menu{
+    display: block;
+  }
+}
+
+@media(min-width:801px){
+    .navlinks{
+    display: flex;
+  }
+
+  .menu{
+    display: none;
+  }
+}
+
+

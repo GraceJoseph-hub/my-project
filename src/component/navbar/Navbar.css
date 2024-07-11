@@ -1,5 +1,6 @@
-/* .navbar__brand{
-  font-family: 'krone One', sans-serif;
-  font-weight: bolder;
-  @apply p-3
-} */
+
+@media(max-width:800px){
+    .navIcon{
+      gap: 8px;
+  }
+}
