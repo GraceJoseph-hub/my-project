@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const BASE_URL = "http://makeup-api.herokuapp.com/api/v1/products";
+const BASE_URL = "https://makeup-api.herokuapp.com/api/v1/products";
 
 // This function is formatting some parameters from the data fetched.
 const formatProduct = (data) => ({
