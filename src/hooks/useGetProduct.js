@@ -3,16 +3,29 @@ import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
+// const BASE_URL = "http://makeup-api.herokuapp.com/api/v1/products";
 const BASE_URL = "https://makeup-api.herokuapp.com/api/v1/products";
 
+
 // This function is formatting some parameters from the data fetched.
+// const formatProduct = (data) => ({
+//   ...data,
+//   category: data.category?.replace(/_/g, " "),
+//   product_type: data.product_type?.replace(/_/g, " "),
+//   description: data.description?.replace(/<\/?[^>]+(>|$)/g, ""),
+//   api_featured_image: `https://${data.api_featured_image}`,
+// });
+
 const formatProduct = (data) => ({
   ...data,
   category: data.category?.replace(/_/g, " "),
   product_type: data.product_type?.replace(/_/g, " "),
   description: data.description?.replace(/<\/?[^>]+(>|$)/g, ""),
-  api_featured_image: `https://${data.api_featured_image}`,
+  api_featured_image: data.api_featured_image.startsWith("http")
+    ? data.api_featured_image
+    : `https://${data.api_featured_image}`,
 });
+
 
 // useGetProduct is the name of the hook
 const useGetProduct = () => {
